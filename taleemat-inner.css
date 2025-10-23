@@ -1,0 +1,170 @@
+/* ================================
+   TALEEMAT INNER DETAIL STYLES
+   ================================ */
+
+:root {
+    --taleemat-inner-primary: #064E00;
+    --taleemat-inner-bg: #f8f9fa;
+    --taleemat-inner-card-bg: #ffffff;
+    --taleemat-inner-text: #333;
+    --taleemat-inner-meta-text: #666;
+}
+
+.horiz-detail-wrapper {
+    background-color: var(--taleemat-inner-bg);
+    padding: 3rem 1rem;
+}
+
+.horiz-detail-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.horiz-detail-card {
+    background-color: var(--taleemat-inner-card-bg);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: flex-start;
+    border: none; /* Removing any potential borders */
+}
+
+.horiz-logo-section {
+    flex-shrink: 0;
+}
+
+.horiz-logo-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.horiz-content-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.horiz-title-text {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--taleemat-inner-primary);
+    line-height: 1.3;
+}
+
+.horiz-meta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.horiz-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--taleemat-inner-meta-text);
+}
+
+.horiz-meta-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.horiz-audio-player {
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.horiz-play-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.horiz-time-display {
+    font-size: 0.8rem;
+    color: var(--taleemat-inner-text);
+}
+
+.horiz-progress-bar {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #ddd;
+    border-radius: 2px;
+}
+
+.horiz-progress-fill {
+    width: 20%;
+    height: 100%;
+    background-color: var(--taleemat-inner-primary);
+    border-radius: 2px;
+}
+
+.horiz-volume-btn,
+.horiz-menu-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #555;
+}
+
+.horiz-description-text {
+    font-size: 1rem;
+    color: var(--taleemat-inner-text);
+    line-height: 1.6;
+}
+
+.horiz-actions-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.horiz-btn-download,
+.horiz-btn-back {
+    background-color: var(--taleemat-inner-primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.horiz-btn-download:hover,
+.horiz-btn-back:hover {
+    background-color: #053d00;
+}
+
+@media (max-width: 768px) {
+    .horiz-detail-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .horiz-meta-group {
+        justify-content: center;
+    }
+
+    .horiz-actions-group {
+        flex-direction: column;
+        width: 100%;
+    }
+}

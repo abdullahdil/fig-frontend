@@ -1,0 +1,885 @@
+/* styles.css */
+
+/* Fonts (import from Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Root variables */
+:root {
+    --brand-green: #063;
+    --brand-green-dark: #052e16;
+    --gold: #D4AF37;
+    --dark-overlay: rgba(0, 0, 0, 0.45);
+    --rounded: 18px;
+    --max-content-width: 1200px;
+}
+
+/* Base page styles */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+/* -------------------------------------
+   1. Top header image
+   ------------------------------------- */
+.top-header img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------------------------
+   2. Top green bar (Urdu + social)
+   ------------------------------------- */
+.top-green {
+    background-color: var(--brand-green);
+    color: #ffffff;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.top-green .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-green .urdu {
+    font-family: 'Noto Sans Arabic', 'Noto Sans', serif;
+    direction: rtl;
+    text-align: right;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Social icons inside top-green */
+.top-green .social a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease;
+}
+
+.top-green .social a:hover {
+    transform: translateY(-3px);
+}
+
+/* Social icons using images in top-green */
+.top-social-icons img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1); /* Make icons white */
+    transition: transform 0.2s ease;
+}
+
+.top-social-icons a:hover img {
+    transform: scale(1.15);
+}
+
+/* -------------------------------------
+   3. Navigation bar overrides
+   ------------------------------------- */
+.main-nav {
+    z-index: 1020;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.main-nav .navbar-brand {
+    font-weight: 700;
+    color: #083;
+}
+
+.main-nav .navbar-toggler {
+    border: none;
+}
+
+.main-nav .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.main-nav .navbar-nav {
+    align-items: center;
+}
+
+.main-nav .navbar-nav .nav-link {
+    color: var(--brand-green);
+    font-weight: 600;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-nav .navbar-nav .nav-link:hover,
+.main-nav .navbar-nav .nav-link:focus {
+    color: var(--brand-green-dark);
+    background-color: rgba(0, 102, 51, 0.1);
+}
+
+/* -------------------------------------
+   4. Hero banner
+   ------------------------------------- */
+.hero-banner {
+    margin-bottom: 70px;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* -------------------------------------
+   5. Text container (green heading)
+   ------------------------------------- */
+.text-box {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.text-box .container {
+    max-width: var(--max-content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-box h2 {
+    color: var(--brand-green);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.text-box p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333333;
+}
+
+.text-box img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    max-width: 500px;
+    height: auto;
+}
+
+/* -------------------------------------
+   6. Rounded box with background image
+   ------------------------------------- */
+.rounded-card {
+    border-radius: var(--rounded);
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Background image overlay */
+.rounded-card .card-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/Background 1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* Content on top of background */
+.rounded-card .card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.rounded-card h3 {
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+
+.rounded-card p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA in rounded-card */
+.rounded-card .btn {
+    background-color: #ffffff;
+    border: none;
+    color: var(--brand-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-card .btn:hover,
+.rounded-card .btn:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------
+   7. Spiritual Treasures Section
+   ------------------------------------- */
+.spiritual-treasures-section {
+    background-color: #ffffff;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.spiritual-treasures-section h2 {
+    color: var(--brand-green-dark);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.spiritual-intro {
+    max-width: 900px;
+    font-size: 1.1rem;
+    color: #666666;
+    line-height: 1.7;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+}
+
+.treasure-card {
+    background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+    color: white;
+    border-radius: var(--rounded);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    text-decoration: none;
+}
+
+.treasure-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    color: white;
+    text-decoration: none;
+}
+
+.treasure-card .treasure-icon {
+    max-width: 110px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.treasure-card h4 {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* -------------------------------------
+   8. Multi-card / feature cards section
+   ------------------------------------- */
+.feature-cards {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.feature-cards .card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.feature-cards .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-cards .card .card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: block;
+}
+
+.feature-cards .card .card-body {
+    padding: 1.25rem;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.feature-cards .card .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #1f1f1f;
+}
+
+.feature-cards .card .card-text {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* small decorative overlay (gold text image) */
+.feature-cards .gold-overlay {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 80px;
+    height: 40px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* arrows below cards */
+.cards-arrows {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.cards-arrows .btn {
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.cards-arrows .btn:hover {
+    background-color: var(--brand-green);
+    color: white;
+    border-color: var(--brand-green);
+}
+
+/* -------------------------------------
+   9. Repeated text section (same as .text-box but with different bg)
+   ------------------------------------- */
+.text-box.bg-light {
+    background-color: #f8f9fa;
+}
+
+/* override heading color if needed */
+.text-box.bg-light h2 {
+    color: var(--brand-green);
+}
+
+/* -------------------------------------
+   10. Split rectangle with phone images
+   ------------------------------------- */
+.split-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.split-left {
+    background: #ffffff;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-left h3 {
+    color: #064E00;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.split-left p {
+    color: #064E00;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.split-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* phone stack box */
+.phone-stack {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* base phone style */
+.phone-stack img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.5s ease;
+}
+
+/* left peek phone */
+.phone-stack img.p1 {
+    transform: translate(-70%, -5%) rotate(-12deg);
+    z-index: 1;
+    width: 160px;
+}
+
+/* center phone */
+.phone-stack img.p2 {
+    transform: translate(-50%, 0);
+    z-index: 3;
+    width: 220px;
+}
+
+/* right peek phone */
+.phone-stack img.p3 {
+    transform: translate(-30%, -5%) rotate(12deg);
+    z-index: 2;
+    left: 70%;
+    width: 160px;
+}
+
+.phone-stack:hover img.p1 {
+    transform: translate(-75%, -10%) rotate(-15deg);
+}
+
+.phone-stack:hover img.p2 {
+    transform: translate(-50%, -5%);
+}
+
+.phone-stack:hover img.p3 {
+    transform: translate(-25%, -10%) rotate(15deg);
+}
+
+/* -------------------------------------
+   11. Dual image + button section
+   ------------------------------------- */
+.two-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.two-images .text-success {
+    color: var(--brand-green) !important;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* centered CTA */
+.two-images .btn {
+    background-color: var(--brand-green);
+    border: none;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.two-images .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------
+   12. Side-by-side simple section
+   ------------------------------------- */
+.row.align-items-center .col-md-6 h3 {
+    color: var(--brand-green);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.row.align-items-center .col-md-6 p {
+    color: #333333;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+
+
+/* --- Mobile: <= 576px --- */
+@media (max-width: 576px) {
+    .phone-stack {
+        width: 240px;
+        height: 340px;
+    }
+    
+    .phone-stack img {
+        width: 140px;
+    }
+    
+    .feature-cards .card .card-img {
+        height: 140px;
+    }
+    
+    .rounded-card .card-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .rounded-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .top-green .urdu {
+        font-size: 0.95rem;
+    }
+    
+    .main-nav .navbar-nav .nav-link {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .text-box h2 {
+        font-size: 1.35rem;
+    }
+    
+    .text-box p {
+        font-size: 0.95rem;
+    }
+    
+    .split-left h3 {
+        font-size: 1.25rem;
+    }
+    
+    .split-left p {
+        font-size: 1rem;
+    }
+    
+    .footer-big-logo {
+        font-size: 200px;
+    }
+}
+
+
+/* ================================
+   IDREESIA FOOTER STYLES
+   ================================ */
+
+.idreesia-footer-section {
+  background: #006400 url("assets/images/footer-bg.svg") repeat; /* Green background + pattern */
+  background-size: contain;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Logo Styling */
+.idreesia-footer-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.idreesia-footer-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Divider Line */
+.idreesia-footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Social Media Icons */
+.idreesia-social-icons img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1); /* Make icons white */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.idreesia-social-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(0.9) invert(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .idreesia-footer-section {
+    text-align: center;
+  }
+  .idreesia-social-icons {
+    justify-content: center !important;
+  }
+}
+
+
+
+/* --- Tablet: 577px to 992px --- */
+@media (min-width: 577px) and (max-width: 992px) {
+    .feature-cards .card .card-img {
+        height: 160px;
+    }
+    
+    .text-box h2 {
+        font-size: 1.45rem;
+    }
+    
+    .phone-stack {
+        width: 280px;
+        height: 360px;
+    }
+    
+    .row.align-items-center .col-md-6 h3 {
+        font-size: 1.35rem;
+    }
+}
+
+/* --- Desktop: >= 993px --- */
+@media (min-width: 993px) {
+    .feature-cards .card .card-img {
+        height: 200px;
+    }
+    
+    .text-box h2 {
+        font-size: 1.8rem;
+    }
+    
+    .rounded-card h3 {
+        font-size: 1.75rem;
+    }
+    
+    .split-left h3 {
+        font-size: 1.75rem;
+    }
+}
+
+/* -------------------------------------
+   Accessibility & focus styles
+   ------------------------------------- */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid rgba(43, 164, 77, 0.15);
+    outline-offset: 2px;
+}
+
+/* utility helpers */
+.u-hide-on-mobile {
+    display: none;
+}
+
+@media (min-width: 577px) {
+    .u-hide-on-mobile {
+        display: inline-block;
+    }
+}
+
+
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Left Section */
+.text-section {
+  background: #0b6623 url("assets/images/pattern.svg") repeat; /* green pattern background */
+  background-size: contain;
+  color: white;
+}
+
+.text-section h1 {
+  font-size: 3rem;
+}
+
+.text-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Right Section (Mockup) */
+.image-section {
+  position: relative;
+  padding: 40px;
+}
+
+.mockup-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+
+/* Responsive Design for Mocup Session */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+  }
+  .text-section {
+    text-align: center;
+    border-radius: 0;
+  }
+  .social-icons {
+    justify-content: center;
+    display: flex;
+  }
+  .mockup-image {
+    width: 90%;
+  }
+}
+
+
+
+/* Idreesia News Section */
+.idreesia-news-section {
+  background-color: #ffffff;
+}
+
+/* Featured Image */
+.idreesia-featured-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* News Cards */
+.idreesia-news-card {
+  transition: transform 0.3s ease;
+}
+
+.idreesia-news-card:hover {
+  transform: scale(1.02);
+}
+
+.idreesia-news-card h6 {
+  color: #064E00; /* Dark green color for the heading */
+}
+
+.idreesia-news-card small {
+  color: #555 !important; /* Overriding Bootstrap's text-muted for better contrast */
+}
+
+
+.idreesia-news-thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* Divider */
+.idreesia-divider {
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+/* Button */
+.idreesia-news-btn {
+  background-color: #006400;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.idreesia-news-btn:hover {
+  background-color: #008000;
+  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .idreesia-news-thumb {
+    width: 100%;
+    height: 180px;
+  }
+  .idreesia-news-card {
+    align-items: center;
+    text-align: center;
+  }
+  .idreesia-news-card h6 {
+    font-size: 1rem;
+  }
+}
